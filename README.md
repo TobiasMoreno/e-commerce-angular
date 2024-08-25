@@ -1,27 +1,44 @@
-# ECommerceAngular
+# E-commerce con Carrito de Compras
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+Este es un proyecto de e-commerce con un carrito de compras implementado en Angular. El objetivo es ofrecer una plataforma que permita a los usuarios navegar por productos, agregar elementos al carrito y gestionar sus compras de manera eficiente.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Lista de productos**: Los usuarios pueden explorar una lista de productos con detalles como nombre, precio e imagen.
+- **Carrito de compras**: Posibilidad de agregar productos al carrito y ver un resumen de los artículos seleccionados.
+- **Gestión de cantidades**: Los usuarios pueden aumentar o disminuir la cantidad de productos desde el carrito.
+- **Total de la compra**: Visualización del costo total de los productos en el carrito.
+- **Interfaz amigable**: Diseño responsivo y fácil de usar.
 
-## Code scaffolding
+## Tecnologías utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 18**: Framework principal para la creación del frontend.
+- **Bootstrap**: Para la gestión del diseño y la responsividad.
+- **HTML5 y CSS3**: Estructura y estilo de la aplicación.
+- **TypeScript**: Lenguaje de programación utilizado en el desarrollo con Angular.
 
-## Build
+## Instalación y uso
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
 
-## Running unit tests
+1. Clona este repositorio:
+    ```bash
+    git clone https://github.com/TobiasMoreno/ecommerce-angular.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navega al directorio del proyecto:
+    ```bash
+    cd ecommerce-angular
+    ```
 
-## Running end-to-end tests
+3. Instala las dependencias:
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Inicia la aplicación:
+    ```bash
+    ng serve
+    ```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+5. Abre la aplicación en tu navegador en `http://localhost:4200/`.
