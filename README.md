@@ -14,7 +14,7 @@ Este es un proyecto de e-commerce con un carrito de compras implementado en Angu
 
 - **Angular 18**: Framework principal para la creación del frontend.
 - **Bootstrap**: Para la gestión del diseño y la responsividad.
-- **HTML5 y CSS3**: Estructura y estilo de la aplicación.
+- **HTML y CSS**: Estructura y estilo de la aplicación.
 - **TypeScript**: Lenguaje de programación utilizado en el desarrollo con Angular.
 
 ## Instalación y uso
@@ -23,12 +23,12 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/TobiasMoreno/ecommerce-angular.git
+    git clone https://github.com/TobiasMoreno/e-commerce-angular.git
     ```
 
 2. Navega al directorio del proyecto:
     ```bash
-    cd ecommerce-angular
+    cd e-commerce-angular
     ```
 
 3. Instala las dependencias:
