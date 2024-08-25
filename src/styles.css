@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --accent-color: #ffc107;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  header {
+    background-color: var(--primary-color);
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+  }
+  
+  .nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color); 
+    border-radius: 5px;
+  }
+
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #375a7f;
+      --secondary-color: #444;
+      --background-color: #222;
+      --text-color: #eaeaea;
+      --accent-color: #f39c12;
+    }
+    .navbar-toggler-icon i {
+      color: #ffffff; 
+    }
+  }
+  

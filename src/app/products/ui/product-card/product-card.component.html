@@ -1,0 +1,12 @@
+<div class="center-card">
+  <div class="card" data-bs-theme="dark" style="width: 18rem">
+    <img [src]="product().image" class="card-img-top" [alt]="product().id" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product().title }}</h5>
+      <p class="card-text">
+        {{ product().description }}
+      </p>
+      <a href="#" class="btn btn-primary">Add to the Cart</a>
+    </div>
+  </div>
+</div>

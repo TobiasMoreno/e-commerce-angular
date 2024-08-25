@@ -1,0 +1,86 @@
+:root {
+  --card-body-bg-color: #0c5e85;
+  --card-border-width: 2px;
+  --primary-color: #375a7f;
+  --secondary-color: #444;
+  --background-color: #222;
+  --text-color: #eaeaea;
+  --accent-color: #f39c12;
+  --card-bg-color: #333;
+  --card-border-color: #444;
+}
+
+.card {
+  border-radius: 0.5rem;
+  align-items: center;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+.card-img-top {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-body {
+  color: var(--text-color);
+  margin: 0.5rem 0 0;
+}
+
+.card-title {
+  color: var(--text-color);
+  /* Para truncar el título a 2 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Número de líneas visibles */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-text {
+  color: var(--text-color);
+  /* Para truncar la descripción a 5 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Número de líneas visibles */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  text-align: center;
+}
+.center-card {
+  display: flex;
+  justify-content: center;
+  background-color: #13131381;
+  border-radius: 5px;
+}
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--card-body-bg-color);
+    border: var(--card-border-width) solid var(--card-border-color);
+  }
+
+  .card-body {
+    color: var(--text-color);
+  }
+
+  .card-title {
+    color: var(--text-color);
+  }
+
+  .card-text {
+    color: var(--text-color);
+  }
+
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+}
