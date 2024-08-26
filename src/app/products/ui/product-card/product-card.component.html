@@ -6,7 +6,10 @@
       <p class="card-text">
         {{ product().description }}
       </p>
-      <a href="#" class="btn btn-primary">Add to the Cart</a>
+      <div class="d-flex gap-3 ">
+        <a href="#" class="btn btn-primary">Add to the Cart</a>
+        <a [routerLink]="['/product',product().id]" class="btn btn-primary">More Details</a>
+      </div>
     </div>
   </div>
 </div>
