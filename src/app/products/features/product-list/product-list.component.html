@@ -9,13 +9,13 @@
     @case ("Success") {
       <div class="d-flex flex-row-reverse p-4">
         <button type="button" class="btn btn-success" (click)="changePage()">
-          Cambiar Pagina
+          See more Products
         </button>
       </div>
       <div class="row g-4">
         @for (product of productsState.state().products; track product) {
           <div class="col-12 row-cols-sm-4 col-md-6 col-lg-3">
-            <app-product-card [product]="product"></app-product-card>
+            <app-product-card [product]="product" (addToCart)="addToCart($event)" ></app-product-card>
           </div>
         }
       </div>
