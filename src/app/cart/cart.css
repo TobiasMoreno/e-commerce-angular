@@ -1,0 +1,20 @@
+* {
+  color: black;
+}
+.card{
+}
+.bg-color-cart{
+  
+}
+.s {
+  background-color: #f7f7f75d; /* Un gris claro para el fondo del section */
+}
+
+.bg-color-cart {
+  background-color: #e0e0e0; /* Un gris un poco más oscuro para el fondo de los productos */
+}
+
+.card {
+  background-color: #484848;
+
+}

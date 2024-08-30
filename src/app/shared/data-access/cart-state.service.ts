@@ -27,13 +27,30 @@ export class CartStateService {
   state = signalSlice({
     initialState: this.initialState,
     sources: [this.loadProducts$],
+    selectors: (state) => ({
+      count: () =>
+        state().products.reduce((acc, prod) => acc + prod.quantity, 0),
+      price: () => {
+        return state().products.reduce(
+          (acc, prod) => acc + prod.product.price * prod.quantity,
+          0,
+        );
+      },
+    }),
     actionSources: {
       add: (state, action$: Observable<ProductItemCart>) =>
         action$.pipe(map((product) => this.add(state, product))),
+      remove: (state, action$: Observable<number>) =>
+        action$.pipe(map((id) => this.remove(state, id))),
+      update: (state, action$: Observable<ProductItemCart>) =>
+        action$.pipe(map((product) => this.update(state, product))),
     },
+
     effects: (state) => ({
       load: () => {
-        console.log(state.products());
+        if (state().loaded) {
+          this._storageService.saveProducts(state().products);
+        }
       },
     }),
   });
@@ -52,5 +69,24 @@ export class CartStateService {
     return {
       products: [...state().products],
     };
+  }
+
+  private remove(state: Signal<State>, productId: number) {
+    return {
+      products: state().products.filter(
+        (product) => product.product.id != productId,
+      ),
+    };
+  }
+
+  private update(state: Signal<State>, product: ProductItemCart) {
+    const products = state().products.map((productInCart) => {
+      if (productInCart.product.id === product.product.id) {
+        return { ...productInCart, quantity: product.quantity };
+      }
+      return productInCart;
+    });
+
+    return { products };
   }
 }

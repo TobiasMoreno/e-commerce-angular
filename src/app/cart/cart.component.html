@@ -1,0 +1,135 @@
+<section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+            <div class="row bg-color-cart">
+              <div class="col-lg-7">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div>
+                    <h2 class="mb-1">Shopping cart</h2>
+                    <p class="mb-0">
+                      You have {{ state.count() }} items in your cart
+                    </p>
+                  </div>
+                </div>
+
+                @for (cartItem of state.products(); track cartItem.product.id) {
+                  <app-cart-itm
+                    [productCarItem]="cartItem"
+                    (onRemove)="onRemove($event)"
+                    (onDecrease)="onDecrease($event)"
+                    (onIncrease)="onIncrease($event)"
+                  ></app-cart-itm>
+                }
+              </div>
+              <div class="col-lg-5">
+                <div class="card bg-light rounded-3">
+                  <div class="card-body bg-color-cart">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <h5 class="mb-0">Card details</h5>
+                    </div>
+
+                    <p class="small mb-2">Card type</p>
+                    <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+                    <i class="fab fa-cc-visa fa-2x me-2"></i>
+                    <i class="fab fa-cc-amex fa-2x me-2"></i>
+                    <i class="fab fa-cc-paypal fa-2x"></i>
+
+                    <form class="mt-4">
+                      <div data-mdb-input-init class="form-outline mb-4">
+                        <input
+                          type="text"
+                          id="typeName"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          placeholder="Card's Name"
+                        />
+                        <label class="form-label" for="typeName"
+                          >Card's Name</label
+                        >
+                      </div>
+
+                      <div data-mdb-input-init class="form-outline mb-4">
+                        <input
+                          type="text"
+                          id="typeText"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          placeholder="1234 5678 9012 3457"
+                          minlength="19"
+                          maxlength="19"
+                        />
+                        <label class="form-label" for="typeText"
+                          >Card Number</label
+                        >
+                      </div>
+
+                      <div class="row mb-4">
+                        <div class="col-md-6">
+                          <div data-mdb-input-init class="form-outline">
+                            <input
+                              type="text"
+                              id="typeExp"
+                              class="form-control form-control-lg"
+                              placeholder="MM/YYYY"
+                              size="7"
+                              id="exp"
+                              minlength="7"
+                              maxlength="7"
+                            />
+                            <label class="form-label" for="typeExp"
+                              >Expiration</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div data-mdb-input-init class="form-outline">
+                            <input
+                              type="password"
+                              id="typeText"
+                              class="form-control form-control-lg"
+                              placeholder="&#9679;&#9679;&#9679;"
+                              size="1"
+                              minlength="3"
+                              maxlength="3"
+                            />
+                            <label class="form-label" for="typeText">CVV</label>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Subtotal</p>
+                      <p class="mb-2">{{ state.price() | currency }}</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Taxes</p>
+                      <p class="mb-2">{{ state.price() * 0.21 | currency }}</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total(Incl. taxes)</p>
+                      <p class="mb-2">{{ state.price() * 1.21 | currency }}</p>
+                    </div>
+
+                    <button type="button" class="btn-lg bg-success">
+                      <span>{{ state.price() * 1.21 | currency }}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

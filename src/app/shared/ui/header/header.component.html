@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-  <div class="container-fluid ">
+  <div class="container-fluid">
     <a class="navbar-brand text-white" routerLink="/">E-Commerce</a>
     <button
       class="navbar-toggler"
@@ -10,17 +10,36 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon h-auto"
-        ><i class="bi bi-list"></i
-      ></span>
+      <span class="navbar-toggler-icon h-auto"><i class="bi bi-list"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ms-auto mb-2 me-3 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" routerLink="/products">Products</a>
+          <a
+            class="nav-link text-white"
+            aria-current="page"
+            routerLink=""
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Products</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink="/cart">Cart</a>
+        <li class="nav-item position-relative">
+          <a
+            class="nav-link text-white"
+            routerLink="/cart"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <i class="fas fa-shopping-cart"></i> Cart
+
+            @if (cartState.count() > 0) {
+              <span
+                class="position-absolute start-50 top-100 translate-middle badge rounded-pill bg-success"
+                >{{ cartState.count() }}
+              </span>
+            }
+          </a>
         </li>
       </ul>
     </div>
